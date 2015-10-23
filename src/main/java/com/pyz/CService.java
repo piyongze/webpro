@@ -17,4 +17,9 @@ public class CService {
         user.setName("testpyz");
         dao.save(user);
     }
+    
+    //用户登录
+    public void login(){
+        
+    }
 }
