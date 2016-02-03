@@ -8,73 +8,8 @@
 
     <name>springmvc_hibernate_demo Maven Webapp</name>
     <url>http://maven.apache.org</url>
-
-    <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <spring.version>4.1.4.RELEASE</spring.version>
-        <hibernate.version>4.3.8.Final</hibernate.version>
-        <jackson.version>2.5.0</jackson.version>
-    </properties>
-
-
-    <build>
-        <finalName>springmvc_hibernate_demo</finalName>
-
-        <plugins>
-            <!-- Run the JUnit unit tests in an isolated classloader -->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-surefire-plugin</artifactId>
-                <version>2.4.2</version>
-                <configuration>
-                    <skipTests>true</skipTests>
-                </configuration>
-
-            </plugin>
-
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-war-plugin</artifactId>
-                <version>2.3</version>
-                <configuration>
-                    <webXml>src/main/webapp/WEB-INF/web.xml</webXml>
-                </configuration>
-            </plugin>
-
-            <!-- generate java doc -->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-javadoc-plugin</artifactId>
-                <version>2.9.1</version>
-                <configuration>
-                    <javadocDirectory>target/javadoc</javadocDirectory>
-                    <reportOutputDirectory>target/javadoc</reportOutputDirectory>
-                    <charset>UTF-8</charset>
-                    <encoding>UTF-8</encoding>
-                    <docencoding>UTF-8</docencoding>
-                    <show>private</show>
-                </configuration>
-            </plugin>
-
-            <!-- 部署至本机 -->
-            <plugin>
-                <groupId>org.codehaus.cargo</groupId>
-                <artifactId>cargo-maven2-plugin</artifactId>
-                <version>1.0</version>
-                <configuration>
-                    <container>
-                        <containerId>tomcat6x</containerId>
-                        <home>D:\WebServer\apache-tomcat-6.0.39</home>
-                    </container>
-                    <configuration>
-                        <type>existing</type>
-                        <home>D:\WebServer\apache-tomcat-6.0.39</home>
-                    </configuration>
-                </configuration>
-            </plugin>
-        </plugins>
-
-    </build>
+ 
+    
     <dependencies>
     	<dependency>
     		<groupId>org.springframework</groupId>
@@ -106,5 +41,50 @@
     		<artifactId>mysql-connector-java</artifactId>
     		<version>5.1.34</version>
     	</dependency>
+    	<dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <version>1.2.14</version>
+        </dependency>
+        <dependency>
+        <groupId>com.fasterxml.jackson.core</groupId>  
+            <artifactId>jackson-core</artifactId>  
+            <version>2.1.0</version>  
+        </dependency>  
+        <dependency>  
+            <groupId>com.fasterxml.jackson.core</groupId>  
+            <artifactId>jackson-databind</artifactId>  
+            <version>2.1.0</version>  
+        </dependency>  
+        <dependency>  
+            <groupId>com.fasterxml.jackson.core</groupId>  
+            <artifactId>jackson-annotations</artifactId>  
+            <version>2.1.0</version>
+        </dependency>
+        <dependency>
+        	<groupId>org.springframework</groupId>
+        	<artifactId>spring-test</artifactId>
+        	<version>4.2.2.RELEASE</version>
+        </dependency>
+        <dependency>
+        	<groupId>junit</groupId>
+        	<artifactId>junit</artifactId>
+        	<version>4.12</version>
+        </dependency>
+        <dependency>
+        	<groupId>javax.servlet</groupId>
+        	<artifactId>servlet-api</artifactId>
+        	<version>3.0-alpha-1</version>
+        	<scope>provided</scope>
+        </dependency>
     </dependencies>
+    
+    <repositories>
+        <repository>
+            <id>io.spring.repo.maven.release</id>
+            <url>http://repo.spring.io/release/</url>
+            <snapshots><enabled>false</enabled></snapshots>
+        </repository>
+    </repositories>
+    
 </project>

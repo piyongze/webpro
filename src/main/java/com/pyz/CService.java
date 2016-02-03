@@ -18,8 +18,20 @@ public class CService {
         dao.save(user);
     }
     
-    //用户登录
-    public void login(){
-        
+    public CUser findUser(int id){
+        CUser user=dao.find(id);
+        return user;
+    }
+    
+    /**
+     * 用户登录
+     * @return
+     */
+    public String login(){
+        return "456";
+    }
+    
+    public int getCnt(){
+        return dao.cnt();
     }
 }
