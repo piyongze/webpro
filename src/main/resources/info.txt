@@ -1,0 +1,2 @@
+1.注意transactional位于哪个包
+2.项目发布到jboss会出现transationmanager冲突，需要将jboss的事务包exclude掉
